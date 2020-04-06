@@ -13,7 +13,6 @@ export default {
   },
   mutations: {
     setPosts(state, posts) {
-      console.log(posts);
       state.posts = [...posts];
     }
   },
@@ -22,7 +21,9 @@ export default {
       return getPosts().then(({
         posts
       }) => {
-        context.commit('setPosts', posts);
+        if (posts) {
+          context.commit('setPosts', posts);
+        }
       });
     }
   }
