@@ -1,0 +1,21 @@
+{
+  "name": "contentful-blog",
+  "version": "1.0.0",
+  "description": "My good Nuxt.js project",
+  "author": "Nuno",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    "contentful": "^7.14.0",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {}
+}
