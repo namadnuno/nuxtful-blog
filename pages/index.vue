@@ -3,29 +3,33 @@
     <div>
       <h2 class="subtitle">Contentful Blog Sample</h2>
       <div class="post-list">
-        <post-item v-for="(post, index) in posts" :post="post" :key="'post-' + index"></post-item>
+        <post-item
+          v-for="(post, index) in posts"
+          :post="post"
+          :key="'post-' + index"
+        ></post-item>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-//import { getPosts } from "../content/posts";
-import PostItem from "../components/PostItem";
-import { mapGetters } from "vuex";
+// import { getPosts } from "../content/posts";
+import { mapGetters } from 'vuex';
+import PostItem from '../components/PostItem.vue';
 
 export default {
   components: {
-    PostItem
+    PostItem,
   },
   asyncData({ store }) {
-    return store.dispatch("posts/loadPosts");
+    return store.dispatch('posts/loadPosts');
   },
   computed: {
     ...mapGetters({
-      posts: "posts/posts"
-    })
-  }
+      posts: 'posts/posts',
+    }),
+  },
 };
 </script>
 

@@ -13,17 +13,17 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   asyncData({ store, route }) {
-    return store.dispatch({ type: "posts/loadPost", slug: route.params.slug });
+    return store.dispatch({ type: 'posts/loadPost', slug: route.params.slug });
   },
   computed: {
     ...mapGetters({
-      post: "posts/currentPost",
-      loadingCurrent: "posts/loadingCurrentPost"
-    })
-  }
+      post: 'posts/currentPost',
+      loadingCurrent: 'posts/loadingCurrentPost',
+    }),
+  },
 };
 </script>
