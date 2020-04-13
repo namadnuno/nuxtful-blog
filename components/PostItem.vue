@@ -1,10 +1,18 @@
 <template>
-  <div class="post-item">
-    <img :src="post.fields.image.fields.file.url" />
-    <nuxt-link :to="'posts/' + post.fields.slug">
-      <h2 class="title">{{ post.fields.title }}</h2>
-    </nuxt-link>
-    <p v-html="post.fields.description"></p>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img :src="post.fields.image.fields.file.url" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <nuxt-link :to="'posts/' + post.fields.slug">
+        <h2 class="title is-4">{{ post.fields.title }}</h2>
+      </nuxt-link>
+      <div class="content">
+        <p v-html="post.fields.description"></p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,19 +28,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.post-item {
-  padding: 1em;
-  border-radius: 5px;
-  border: 1px solid #eee;
-  margin-bottom: 1.3em;
-
-  img {
-    max-width: 100%;
-  }
-
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-}
 </style>

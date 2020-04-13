@@ -49,7 +49,9 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/bulma'
+  ],
   /*
    ** Build configuration
    */
@@ -57,6 +59,13 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false
+        }
+      }
+    },
     extend(config, ctx) {},
   },
   env: {
