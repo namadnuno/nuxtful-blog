@@ -20,16 +20,16 @@ import PostItem from '../components/PostItem.vue';
 
 export default {
   components: {
-    PostItem,
+    PostItem
   },
   asyncData({ store }) {
     return store.dispatch('posts/loadPosts');
   },
   computed: {
     ...mapGetters({
-      posts: 'posts/posts',
-    }),
-  },
+      posts: 'posts/posts'
+    })
+  }
 };
 </script>
 
