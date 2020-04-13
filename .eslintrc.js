@@ -3,23 +3,32 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ["plugin:vue/essential", "airbnb-base"],
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.test.jsx'],
+      env: {
+        jest: true
+      }
+    }
+  ],
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module'
   },
-  plugins: ["vue"],
+  plugins: ['vue'],
   rules: {
-    "max-len": "off",
-    "no-param-reassign": [
-      "error",
+    'arrow-parens': 'off',
+    'max-len': 'off',
+    'no-param-reassign': [
+      'error',
       {
         props: true,
-        ignorePropertyModificationsFor: ["state"]
+        ignorePropertyModificationsFor: ['state']
       }
     ]
   }
