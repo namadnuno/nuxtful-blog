@@ -1,13 +1,15 @@
 <template>
-  <div>
+  <div class="container">
     <div v-if="loadingCurrent">loading...</div>
-    <div v-else class="post-item">
-      <img :src="post.fields.image.fields.file.url" />
-      <nuxt-link :to="'posts/' + post.fields.slug">
-        <h2 class="title">{{ post.fields.title }}</h2>
-      </nuxt-link>
-      <p v-html="post.fields.description"></p>
-    </div>
+    <section v-else class="section">
+      <h2 class="center title">{{ post.fields.title }}</h2>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <img :src="post.fields.image.fields.file.url" />
+        </div>
+      </div>
+      <p v-html="post.fields.content"></p>
+    </section>
   </div>
 </template>
 <script>
