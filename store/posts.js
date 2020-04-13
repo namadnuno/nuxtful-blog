@@ -4,12 +4,12 @@ export default {
   state: () => ({
     posts: [],
     currentPost: {},
-    loadingCurrentPost: false,
+    loadingCurrentPost: false
   }),
   getters: {
-    posts: (state) => state.posts,
-    currentPost: (state) => state.currentPost,
-    loadingCurrentPost: (state) => state.loadingCurrentPost,
+    posts: state => state.posts,
+    currentPost: state => state.currentPost,
+    loadingCurrentPost: state => state.loadingCurrentPost
   },
   mutations: {
     setPosts(state, posts) {
@@ -17,12 +17,12 @@ export default {
     },
     setCurrentPost(state, post) {
       state.currentPost = {
-        ...post,
+        ...post
       };
     },
     setLoadingCurrentPost: (state, loading) => {
       state.loadingCurrentPost = loading;
-    },
+    }
   },
   actions: {
     loadPosts(context) {
@@ -40,6 +40,6 @@ export default {
           context.commit('setLoadingCurrentPost', false);
         }
       });
-    },
-  },
+    }
+  }
 };
