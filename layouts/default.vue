@@ -2,15 +2,17 @@
   <div>
     <navbar />
     <nuxt />
+    <m-footer />
   </div>
 </template>
 
 <script>
 import Navbar from '~/components/Navbar.vue';
-
+import MFooter from '~/components/Footer.vue';
 export default {
   components: {
-    Navbar
+    Navbar,
+    MFooter
   }
 };
 </script>

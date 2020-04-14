@@ -1,13 +1,22 @@
 <template>
-  <div class="container">
-    <div>
-      <h2 class="subtitle">Contentful Blog Sample</h2>
-      <div class="post-list">
-        <post-item
-          v-for="(post, index) in posts"
-          :post="post"
-          :key="'post-' + index"
-        ></post-item>
+  <div>
+    <div class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <h2 class="title">Contentful Blog Sample</h2>
+        <p>Integration between Nuxt and Contentful 💪</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <div class="columns">
+          <div
+            class="column"
+            v-for="(post, index) in posts"
+            :key="'post-' + index"
+          >
+            <post-item :post="post"></post-item>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -33,19 +42,4 @@ export default {
 };
 </script>
 
-<style socped lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1024px;
-
-  .post-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 40px;
-  }
-}
-</style>
+<style socped lang="scss"></style>

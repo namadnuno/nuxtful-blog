@@ -11,6 +11,7 @@ describe('posts', () => {
       expect(posts[0].fields).toHaveProperty('title');
       expect(posts[0].fields).toHaveProperty('content');
       expect(posts[0].fields).toHaveProperty('image');
+      expect(posts[0].fields).toHaveProperty('category');
       done();
     });
   });
@@ -22,6 +23,7 @@ describe('posts', () => {
       expect(post.fields).toHaveProperty('title');
       expect(post.fields).toHaveProperty('content');
       expect(post.fields).toHaveProperty('image');
+      expect(post.fields).toHaveProperty('category');
       done();
     });
   });

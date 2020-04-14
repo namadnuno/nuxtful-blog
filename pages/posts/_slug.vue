@@ -8,6 +8,9 @@
           <img :src="post.fields.image.fields.file.url" />
         </div>
       </div>
+      <nuxt-link :to="'/category/' + post.fields.category.fields.slug">
+        <span class="tag is-info">{{ post.fields.category.fields.name }}</span>
+      </nuxt-link>
       <p v-html="post.fields.content"></p>
     </section>
   </div>
@@ -22,8 +25,8 @@ export default {
   computed: {
     ...mapGetters({
       post: 'posts/currentPost',
-      loadingCurrent: 'posts/loadingCurrentPost',
-    }),
-  },
+      loadingCurrent: 'posts/loadingCurrentPost'
+    })
+  }
 };
 </script>

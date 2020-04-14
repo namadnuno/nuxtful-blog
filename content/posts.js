@@ -4,10 +4,10 @@ import client from './client';
 export function getPosts() {
   return client
     .getEntries({
-      content_type: 'post',
+      content_type: 'post'
     })
-    .then((entries) => ({
-      posts: entries.items,
+    .then(entries => ({
+      posts: entries.items
     }));
 }
 
@@ -15,13 +15,28 @@ export function getPostBySlug(slug) {
   return client
     .getEntries({
       content_type: 'post',
-      'fields.slug': slug,
+      'fields.slug': slug
     })
-    .then(async (entries) => {
+    .then(async entries => {
       const post = entries.items[0];
       post.fields.content = documentToHtmlString(post.fields.content);
       return {
-        post,
+        post
+      };
+    });
+}
+
+export function getPostOfCategory(categorySlug) {
+  console.log(categorySlug);
+  return client
+    .getEntries({
+      content_type: 'post',
+      'fields.category.sys.contentType.sys.id': 'postCategory',
+      'fields.category.fields.slug': categorySlug
+    })
+    .then(async entries => {
+      return {
+        posts: entries.items
       };
     });
 }
