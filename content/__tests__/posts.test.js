@@ -18,7 +18,6 @@ describe('posts', () => {
 
   test('it can get a post by slug', done => {
     getPostBySlug('post-sample').then(({ post }) => {
-      console.log(post);
       expect(post).toBeInstanceOf(Object);
       expect(post).toHaveProperty('fields');
       expect(post.fields).toHaveProperty('title');

@@ -1,4 +1,4 @@
-import { getPosts, getPostBySlug } from '../content/posts';
+import { getPosts, getPostBySlug, getPostOfCategory } from '../content/posts';
 
 export default {
   state: () => ({
@@ -38,6 +38,13 @@ export default {
         if (post) {
           context.commit('setCurrentPost', post);
           context.commit('setLoadingCurrentPost', false);
+        }
+      });
+    },
+    loadPostOfCategory(context, payload) {
+      return getPostOfCategory(payload.slug).then(({ posts }) => {
+        if (posts) {
+          context.commit('setPosts', posts);
         }
       });
     }

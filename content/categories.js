@@ -9,3 +9,16 @@ export function getCategories() {
       categories: entries.items
     }));
 }
+
+export function getCategoryBySlug(slug) {
+  return client
+    .getEntries({
+      content_type: 'postCategory',
+      'fields.slug': slug
+    })
+    .then(entries => {
+      return {
+        category: entries.items[0]
+      };
+    });
+}

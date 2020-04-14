@@ -13,7 +13,6 @@
         <span></span>
       </div>
     </div>
-
     <div id="navbarExampleTransparentExample" class="navbar-end">
       <div class="navbar-start">
         <nuxt-link class="navbar-item" to="/posts">
