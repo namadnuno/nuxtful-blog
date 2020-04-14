@@ -1,0 +1,112 @@
+{
+  "contentTypes": [{
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "jjt190gvbqii"
+        }
+      },
+      "id": "post",
+      "type": "ContentType",
+      "createdAt": "2020-03-23T15:14:32.705Z",
+      "updatedAt": "2020-03-23T17:50:43.478Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "publishedVersion": 7,
+      "publishedAt": "2020-03-23T17:50:43.478Z",
+      "firstPublishedAt": "2020-03-23T15:14:33.163Z",
+      "createdBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "7LGbYJyYTMHtb3aenQW5lX"
+        }
+      },
+      "updatedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "7LGbYJyYTMHtb3aenQW5lX"
+        }
+      },
+      "publishedCounter": 4,
+      "version": 8,
+      "publishedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "7LGbYJyYTMHtb3aenQW5lX"
+        }
+      }
+    },
+    "displayField": "title",
+    "name": "Post",
+    "description": "",
+    "fields": [{
+        "id": "title",
+        "name": "Title",
+        "type": "Symbol",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "slug",
+        "name": "Slug",
+        "type": "Symbol",
+        "localized": false,
+        "required": false,
+        "validations": [{
+          "unique": true
+        }],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "description",
+        "name": "description",
+        "type": "Text",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "content",
+        "name": "Content",
+        "type": "RichText",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "image",
+        "name": "Image",
+        "type": "Link",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false,
+        "linkType": "Asset"
+      }
+    ]
+  }],
+  "editorInterfaces": [],
+  "entries": [],
+  "assets": [],
+  "webhooks": [],
+  "roles": []
+}
