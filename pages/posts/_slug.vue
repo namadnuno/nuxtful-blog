@@ -26,12 +26,12 @@ import { mapGetters } from 'vuex';
 
 export default {
   asyncData({ store, route }) {
-    return store.dispatch({ type: 'posts/loadPost', slug: route.params.slug });
+    return store.dispatch({ type: 'post/loadPost', slug: route.params.slug });
   },
   computed: {
     ...mapGetters({
-      post: 'posts/currentPost',
-      loadingCurrent: 'posts/loadingCurrentPost'
+      post: 'post/post',
+      loadingCurrent: 'post/loading'
     })
   }
 };
