@@ -2,8 +2,8 @@
   <div>
     <div class="hero is-medium is-primary is-bold">
       <div class="hero-body">
-        <h2 class="title">Contentful Blog Sample</h2>
-        <p>Integration between Nuxt and Contentful 💪</p>
+        <h2 class="title">Nextful</h2>
+        <p>Integration between Nuxt and Contentful using vuex to manage the state. 💪</p>
       </div>
     </div>
     <div class="container">
