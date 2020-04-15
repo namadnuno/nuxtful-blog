@@ -51,4 +51,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style land="scss">
+nav.navbar {
+    height: 6rem !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
+}
+</style>
