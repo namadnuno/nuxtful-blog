@@ -4,7 +4,8 @@ import client from './client';
 export function getPosts() {
   return client
     .getEntries({
-      content_type: 'post'
+      content_type: 'post',
+      order: '-sys.createdAt'
     })
     .then(entries => ({
       posts: entries.items
@@ -15,7 +16,8 @@ export function getPostBySlug(slug) {
   return client
     .getEntries({
       content_type: 'post',
-      'fields.slug': slug
+      'fields.slug': slug,
+      order: '-sys.createdAt'
     })
     .then(async entries => {
       const post = entries.items[0];
@@ -27,12 +29,12 @@ export function getPostBySlug(slug) {
 }
 
 export function getPostOfCategory(categorySlug) {
-  console.log(categorySlug);
   return client
     .getEntries({
       content_type: 'post',
       'fields.category.sys.contentType.sys.id': 'postCategory',
-      'fields.category.fields.slug': categorySlug
+      'fields.category.fields.slug': categorySlug,
+      order: '-sys.createdAt'
     })
     .then(async entries => {
       return {
