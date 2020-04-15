@@ -13,6 +13,7 @@
               <h2 class="title is-4">{{ post.fields.title }}</h2>
             </nuxt-link>
             <div class="content">
+              <span class="tag is-light mb-2 mt-1">{{ post.sys.createdAt | date }}</span>
               <p v-html="post.fields.description"></p>
             </div>
           </div>
@@ -23,11 +24,19 @@
 </template>
 
 <script>
+import moment from 'moment';
+
+
 export default {
   props: {
     post: {
       type: Object,
       required: true
+    }
+  },
+  filters: {
+    date(date) {
+      return moment(date).format('d MMMM YYYY');
     }
   }
 };

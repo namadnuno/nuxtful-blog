@@ -65,4 +65,13 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+.mt-1 {
+  margin-top: .5rem;
+}
+.mt-2 {
+  margin-top: 1rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
 </style>

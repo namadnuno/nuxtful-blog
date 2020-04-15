@@ -7,12 +7,12 @@
     </div>
     <div class="container">
       <div class="section">
-          <div
-            v-for="(post, index) in posts"
-            :key="'post-' + index"
+        <div
+          v-for="(post, index) in posts"
+          :key="'post-' + index"
           >
-            <horizontal-post :post="post"></horizontal-post>
-          </div>
+          <horizontal-post :post="post"></horizontal-post>
+        </div>
       </div>
     </div>
   </div>
