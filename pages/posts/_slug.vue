@@ -14,6 +14,7 @@
               <span class="tag">{{ post.fields.category.fields.name }}</span>
             </nuxt-link>
             <h2 class="subtitle is-2">{{ post.fields.title }}</h2>
+            <h4 class="subtitle is-5">{{ post.sys.createdAt | date }}</h4>
             <p v-html="post.fields.content"></p>
           </div>
         </div>
@@ -23,6 +24,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex';
+import moment from 'moment';
 
 export default {
   asyncData({ store, route }) {
@@ -33,6 +35,11 @@ export default {
       post: 'post/post',
       loadingCurrent: 'post/loading'
     })
+  },
+  filters: {
+    date(date) {
+      return moment(date).format('MMMM d, YYYY');
+    }
   }
 };
 </script>
