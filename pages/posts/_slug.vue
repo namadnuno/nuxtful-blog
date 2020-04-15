@@ -2,16 +2,22 @@
   <div class="container">
     <div v-if="loadingCurrent">loading...</div>
     <section v-else class="section">
-      <h2 class="center title">{{ post.fields.title }}</h2>
       <div class="columns is-centered">
         <div class="column is-8">
           <img :src="post.fields.image.fields.file.url" />
         </div>
       </div>
-      <nuxt-link :to="'/category/' + post.fields.category.fields.slug">
-        <span class="tag is-info">{{ post.fields.category.fields.name }}</span>
-      </nuxt-link>
-      <p v-html="post.fields.content"></p>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <div class="content is-medium">
+            <nuxt-link :to="'/category/' + post.fields.category.fields.slug">
+              <span class="tag">{{ post.fields.category.fields.name }}</span>
+            </nuxt-link>
+            <h2 class="subtitle is-2">{{ post.fields.title }}</h2>
+            <p v-html="post.fields.content"></p>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
